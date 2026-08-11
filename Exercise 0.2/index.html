@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Appliance Energy Consumption</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">⚡ EcoWatts</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="televisions.html" class="nav-link">Televisions</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Smart Appliance Energy Tracker</h1>
+      <p>Understand your household electricity consumption, calculate annual costs, and make energy-efficient choices.</p>
+      <a href="#calculator" class="btn btn-primary">Try Quick Calculator</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Appliance Categories Overview -->
+    <section class="section">
+      <h2>Major Household Energy Consumers</h2>
+      <p class="section-intro">Home appliances account for over 60% of average residential electricity bills. Here is how standard appliances compare in power usage:</p>
+      
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🧊</div>
+          <h3>Refrigerators</h3>
+          <p><strong>Avg. Wattage:</strong> 150 - 400 W</p>
+          <p>Runs 24/7 with compressor cycling. Energy Star models save up to 15% annually.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📺</div>
+          <h3>Televisions</h3>
+          <p><strong>Avg. Wattage:</strong> 50 - 200 W</p>
+          <p>Power draw varies significantly by panel type (LED vs. OLED) and screen size.</p>
+          <a href="televisions.html" class="card-link">View TV Breakdown →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">❄️</div>
+          <h3>Air Conditioners</h3>
+          <p><strong>Avg. Wattage:</strong> 1000 - 3500 W</p>
+          <p>The single highest energy consumer during summer months. Inverter ACs reduce peak load.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧺</div>
+          <h3>Washing Machines</h3>
+          <p><strong>Avg. Wattage:</strong> 500 - 1500 W</p>
+          <p>Heating water accounts for nearly 90% of the energy consumed during a cycle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Energy Calculator -->
+    <section id="calculator" class="section calculator-section">
+      <h2>Quick Energy Cost Estimator</h2>
+      <p>Estimate the annual running cost of any appliance using this quick formula calculator:</p>
+
+      <form id="quickCalcForm" class="calc-form">
+        <div class="form-group">
+          <label for="applianceName">Appliance Name</label>
+          <input type="text" id="applianceName" placeholder="e.g. Microwave" required>
+        </div>
+
+        <div class="form-group">
+          <label for="wattage">Power Rating (Watts)</label>
+          <input type="number" id="wattage" placeholder="e.g. 1200" min="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="hoursPerDay">Daily Usage (Hours)</label>
+          <input type="number" id="hoursPerDay" placeholder="e.g. 1.5" step="0.1" min="0.1" max="24" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tariffRate">Electricity Rate ($ per kWh)</label>
+          <input type="number" id="tariffRate" value="0.16" step="0.01" min="0.01" required>
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Calculate Annual Cost</button>
+      </form>
+
+      <!-- Calculator Output -->
+      <div id="calcResult" class="result-box hidden">
+        <h3>Estimated Energy Cost for <span id="resName">-</span></h3>
+        <p><strong>Daily Usage:</strong> <span id="resDailyKwh">0</span> kWh</p>
+        <p><strong>Monthly Cost:</strong> $<span id="resMonthlyCost">0.00</span></p>
+        <p class="highlight-price"><strong>Annual Cost:</strong> $<span id="resAnnualCost">0.00</span></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 EcoWatts Appliance Energy Project. Built for Educational Purposes.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

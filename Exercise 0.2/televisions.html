@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Televisions - Appliance Energy Consumption</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">⚡ EcoWatts</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="televisions.html" class="nav-link">Televisions</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Subpage Header -->
+  <section class="subpage-header">
+    <div class="container">
+      <h1>Television Energy Consumption Analysis</h1>
+      <p>How screen size, display technology, and settings affect your TV's power bill.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Overview Section -->
+    <section class="section">
+      <h2>Display Technology & Power Usage</h2>
+      <p>Not all TVs draw energy equally. Older display technologies like Plasma consume vast amounts of heat and power, whereas modern LED and OLED panels utilize energy far more efficiently.</p>
+
+      <!-- Tech Comparison Table -->
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Display Type</th>
+              <th>Avg. Wattage (55" Screen)</th>
+              <th>Efficiency Rating</th>
+              <th>Key Characteristic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>LED / LCD</strong></td>
+              <td>50 - 80 W</td>
+              <td><span class="badge badge-success">High</span></td>
+              <td>Uses backlit LEDs; very power efficient.</td>
+            </tr>
+            <tr>
+              <td><strong>QLED</strong></td>
+              <td>70 - 110 W</td>
+              <td><span class="badge badge-success">High</span></td>
+              <td>Brighter quantum dots require slightly more energy than basic LED.</td>
+            </tr>
+            <tr>
+              <td><strong>OLED</strong></td>
+              <td>90 - 140 W</td>
+              <td><span class="badge badge-warning">Moderate</span></td>
+              <td>Self-emitting pixels draw more power during bright/white scenes.</td>
+            </tr>
+            <tr>
+              <td><strong>Plasma (Legacy)</strong></td>
+              <td>250 - 400 W</td>
+              <td><span class="badge badge-danger">Poor</span></td>
+              <td>Generates substantial heat and high power draw.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TV Specific Cost Calculator -->
+    <section class="section calculator-section">
+      <h2>TV Annual Cost Estimator</h2>
+      <p>Select your screen parameters to estimate your specific TV running cost:</p>
+
+      <form id="tvCalcForm" class="calc-form">
+        <div class="form-group">
+          <label for="tvTech">Display Technology</label>
+          <select id="tvTech" required>
+            <option value="60">LED TV (~60W)</option>
+            <option value="90">QLED TV (~90W)</option>
+            <option value="120">OLED TV (~120W)</option>
+            <option value="300">Plasma TV (~300W)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="screenSize">Screen Size Multiplier</label>
+          <select id="screenSize" required>
+            <option value="0.7">32" - 43" Small Screen</option>
+            <option value="1.0" selected>50" - 55" Medium Screen</option>
+            <option value="1.4">65" - 75"+ Large Screen</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tvHours">Daily Viewing Hours</label>
+          <input type="number" id="tvHours" value="5" min="1" max="24" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tvTariff">Electricity Rate ($ per kWh)</label>
+          <input type="number" id="tvTariff" value="0.16" step="0.01" min="0.01" required>
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Calculate TV Energy Cost</button>
+      </form>
+
+      <!-- TV Calculator Result -->
+      <div id="tvCalcResult" class="result-box hidden">
+        <h3>Estimated TV Power Cost</h3>
+        <p><strong>Effective Power Rating:</strong> <span id="tvCalcWattage">0</span> Watts</p>
+        <p><strong>Daily Usage:</strong> <span id="tvCalcKwh">0</span> kWh</p>
+        <p class="highlight-price"><strong>Annual Cost:</strong> $<span id="tvCalcAnnual">0.00</span></p>
+      </div>
+    </section>
+
+    <!-- Energy Saving Tips -->
+    <section class="section">
+      <h2>Tips to Lower Your TV Energy Consumption</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h4>1. Enable Eco Mode / Ambient Sensor</h4>
+          <p>Most modern TVs feature automatic brightness sensors that lower backlight levels at night, saving up to 30% energy.</p>
+        </div>
+        <div class="tip-card">
+          <h4>2. Turn Off Background Playback</h4>
+          <p>Leaving the TV running for ambient background sound wastes over 100 kWh per year. Use smart sleep timers.</p>
+        </div>
+        <div class="tip-card">
+          <h4>3. Disable Quick-Start / Instant On</h4>
+          <p>Instant standby modes keep the TV processor running continuously, drawing 10 - 20 Watts even when turned off.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 EcoWatts Appliance Energy Project. Built for Educational Purposes.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
