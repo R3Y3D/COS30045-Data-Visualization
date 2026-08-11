@@ -3,116 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Appliance Energy Consumption</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>About Us | Appliance Energy Consumption</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">⚡ EcoWatts</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+      <a href="index.html" class="logo-link" title="Return to Home">
+        <img src="assets/img/logo.png" alt="Appliance Energy Logo" class="nav-logo">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+
       <nav id="navMenu">
         <ul>
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="televisions.html" class="nav-link">Televisions</a></li>
-          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="about.html" class="nav-link active">About Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Subpage Header -->
+  <!-- Subpage Banner -->
   <section class="subpage-header">
     <div class="container">
       <h1>About The Project</h1>
-      <p>Learn about our mission, project architecture, and core web development standards.</p>
+      <p>Demonstrating core web development standards, responsive design, and DOM manipulation.</p>
     </div>
   </section>
 
   <!-- Main Content -->
   <main class="container">
 
-    <!-- Mission & Background -->
     <section class="section">
       <div class="about-grid">
-        <div class="about-text">
-          <h2>Our Mission</h2>
-          <p>The <strong>Appliance Energy Consumption Project</strong> was developed to empower consumers with clear data on household power consumption. Electricity rates continue to fluctuate, making energy literacy crucial for budgeting and sustainability.</p>
-          <p>Through simple interactive tools and comparative data, this site helps users quantify the real financial cost of their everyday electrical devices.</p>
+        <div>
+          <h2>Project Overview</h2>
+          <p>The <strong>Appliance Energy Consumption Website</strong> was developed as an educational web design project demonstrating core front-end engineering fundamentals: semantic HTML structure, responsive CSS layout, and client-side JavaScript execution.</p>
+          <p>The site focuses on the Australian energy market context, educating consumers on electricity tariff structures, energy efficiency labels, and power consumption calculations.</p>
         </div>
-        <div class="about-highlight-box">
-          <h3>⚡ Key Goals</h3>
+
+        <div class="highlight-box">
+          <h3>📌 Technical Highlights</h3>
           <ul>
-            <li>Demystify electrical power units (Watts vs. kWh).</li>
-            <li>Provide real-time interactive energy calculators.</li>
-            <li>Promote energy-efficient purchasing decisions.</li>
-            <li>Demonstrate clean web development architecture.</li>
+            <li>Clean semantic HTML5 structure</li>
+            <li>Consistent brand styling via CSS variables</li>
+            <li>Vanilla JavaScript client-side calculator</li>
+            <li>Accessible FAQ accordion menu</li>
+            <li>Fully responsive design across viewports</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Web Dev Concepts Section -->
+    <!-- Generative AI Acknowledgement Statement -->
     <section class="section">
-      <h2>Web Development Standards Demonstrated</h2>
-      <p>This website was constructed adhering to core web development practices and clean project organization:</p>
-
-      <div class="card-grid">
-        <div class="card">
-          <h3>Semantic HTML5</h3>
-          <p>Utilizes clean structure tags (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>) for improved accessibility and SEO.</p>
-        </div>
-
-        <div class="card">
-          <h3>CSS Variables & Flex/Grid</h3>
-          <p>Built with modern CSS layouts using Flexbox, CSS Grid, custom color variables, and media queries for responsive mobile scaling.</p>
-        </div>
-
-        <div class="card">
-          <h3>Dynamic JavaScript</h3>
-          <p>Employs modular DOM manipulation, dynamic class toggling, event handling, and calculation formulas without heavy external libraries.</p>
-        </div>
+      <h2>Generative AI Disclosure & Acknowledgement</h2>
+      <div class="ai-disclosure-card">
+        <p>In accordance with project guidelines, this website was built with assistance from Generative AI (Gemini). AI was utilized as an AI coding collaborator to assist with:</p>
+        <ul>
+          <li>Boilerplate HTML5 structure and accessible navigation patterns</li>
+          <li>CSS styling, color variables matching logo palette, and grid layouts</li>
+          <li>JavaScript DOM event handling, accordion logic, and calculator input validation</li>
+        </ul>
+        <p>All generated code was thoroughly reviewed, tested, organized, and customized by the student.</p>
       </div>
-    </section>
-
-    <!-- Interactive Contact Form -->
-    <section class="section calculator-section">
-      <h2>Contact / Feedback</h2>
-      <p>Have questions or suggestions regarding our energy calculators? Reach out below:</p>
-
-      <form id="contactForm" class="calc-form">
-        <div class="form-group">
-          <label for="contactName">Your Name</label>
-          <input type="text" id="contactName" placeholder="Jane Doe" required>
-        </div>
-
-        <div class="form-group">
-          <label for="contactEmail">Email Address</label>
-          <input type="email" id="contactEmail" placeholder="jane@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="contactMessage">Message</label>
-          <textarea id="contactMessage" rows="4" placeholder="Your feedback or inquiry..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Send Feedback</button>
-      </form>
-
-      <div id="contactStatus" class="result-box hidden"></div>
     </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- Shared Footer -->
   <footer class="footer">
     <div class="container footer-content">
-      <p>&copy; 2026 EcoWatts Appliance Energy Project. Built for Educational Purposes.</p>
+      <p>&copy; <span id="currentYear"></span> Appliance Energy Consumption Website | Designed by <strong>Student Name</strong></p>
+      <p class="ai-ack"><em>Acknowledgement: Generative AI assistance was utilized for boilerplate code structuring, CSS layout formatting, and interactive JavaScript logic refinement.</em></p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

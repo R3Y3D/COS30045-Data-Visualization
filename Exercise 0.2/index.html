@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Appliance Energy Consumption</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Home | Appliance Energy Consumption Australia</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo">⚡ EcoWatts</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+      <!-- Logo returns to Home page -->
+      <a href="index.html" class="logo-link" title="Return to Home">
+        <img src="assets/img/logo.png" alt="Appliance Energy Logo" class="nav-logo">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+
       <nav id="navMenu">
         <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="televisions.html" class="nav-link">Televisions</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
         </ul>
@@ -26,99 +31,170 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-content">
-      <h1>Smart Appliance Energy Tracker</h1>
-      <p>Understand your household electricity consumption, calculate annual costs, and make energy-efficient choices.</p>
-      <a href="#calculator" class="btn btn-primary">Try Quick Calculator</a>
+      <h1>Energy Rating & Appliance Consumption in Australia</h1>
+      <p>Empowering Australian households to monitor power consumption, lower grid demand, and reduce annual electricity bills.</p>
+      <a href="#calculator" class="btn btn-primary">Launch Energy Calculator</a>
     </div>
   </section>
 
   <!-- Main Content -->
   <main class="container">
-    
-    <!-- Appliance Categories Overview -->
+
+    <!-- Australian Market Overview -->
     <section class="section">
-      <h2>Major Household Energy Consumers</h2>
-      <p class="section-intro">Home appliances account for over 60% of average residential electricity bills. Here is how standard appliances compare in power usage:</p>
-      
+      <h2>Understanding Household Energy Use in Australia</h2>
+      <p class="section-intro">Australian households spend an average of $1,600 to $2,200 per year on electricity. Understanding the power draw (wattage) of standard appliances helps minimize peak tariff costs.</p>
+
       <div class="card-grid">
         <div class="card">
-          <div class="card-icon">🧊</div>
-          <h3>Refrigerators</h3>
-          <p><strong>Avg. Wattage:</strong> 150 - 400 W</p>
-          <p>Runs 24/7 with compressor cycling. Energy Star models save up to 15% annually.</p>
+          <div class="card-icon">⚡</div>
+          <h3>Australian Tariffs</h3>
+          <p>Average residential electricity prices range between <strong>28c and 38c per kWh</strong> depending on your state and whether you are on time-of-use rates.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🏷️</div>
+          <h3>Energy Rating Label</h3>
+          <p>The Australian Government's Energy Rating Star system makes it easy to compare appliance efficiency—more stars mean lower running costs.</p>
         </div>
 
         <div class="card">
           <div class="card-icon">📺</div>
-          <h3>Televisions</h3>
-          <p><strong>Avg. Wattage:</strong> 50 - 200 W</p>
-          <p>Power draw varies significantly by panel type (LED vs. OLED) and screen size.</p>
-          <a href="televisions.html" class="card-link">View TV Breakdown →</a>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">❄️</div>
-          <h3>Air Conditioners</h3>
-          <p><strong>Avg. Wattage:</strong> 1000 - 3500 W</p>
-          <p>The single highest energy consumer during summer months. Inverter ACs reduce peak load.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🧺</div>
-          <h3>Washing Machines</h3>
-          <p><strong>Avg. Wattage:</strong> 500 - 1500 W</p>
-          <p>Heating water accounts for nearly 90% of the energy consumed during a cycle.</p>
+          <h3>Entertainment & TVs</h3>
+          <p>Televisions and home entertainment hubs account for up to 10% of standard living room electricity consumption.</p>
+          <a href="televisions.html" class="card-link">Explore TV Consumption Breakdown →</a>
         </div>
       </div>
     </section>
 
-    <!-- Quick Energy Calculator -->
+    <!-- Interactive Appliance Energy Calculator -->
     <section id="calculator" class="section calculator-section">
-      <h2>Quick Energy Cost Estimator</h2>
-      <p>Estimate the annual running cost of any appliance using this quick formula calculator:</p>
+      <h2>Interactive Appliance Energy Calculator</h2>
+      <p>Select a preset Australian appliance or enter custom power values to calculate daily, monthly, and yearly costs.</p>
 
-      <form id="quickCalcForm" class="calc-form">
+      <form id="energyCalcForm" class="calc-form" novalidate>
+        
         <div class="form-group">
-          <label for="applianceName">Appliance Name</label>
-          <input type="text" id="applianceName" placeholder="e.g. Microwave" required>
+          <label for="applianceSelect">Preset Appliance Model (Optional)</label>
+          <select id="applianceSelect">
+            <option value="custom">-- Custom Input --</option>
+            <option value="200">Standard Refrigerator (~200W)</option>
+            <option value="80">55" LED Television (~80W)</option>
+            <option value="1500">Split System Air Conditioner (~1500W)</option>
+            <option value="1200">Clothes Dryer (~1200W)</option>
+            <option value="500">Washing Machine Warm Cycle (~500W)</option>
+          </select>
         </div>
 
         <div class="form-group">
-          <label for="wattage">Power Rating (Watts)</label>
-          <input type="number" id="wattage" placeholder="e.g. 1200" min="1" required>
+          <label for="wattageInput">Power Rating (Watts) <span class="required">*</span></label>
+          <input type="number" id="wattageInput" placeholder="e.g. 150" min="1" step="1">
+          <span class="error-msg" id="wattageError"></span>
         </div>
 
         <div class="form-group">
-          <label for="hoursPerDay">Daily Usage (Hours)</label>
-          <input type="number" id="hoursPerDay" placeholder="e.g. 1.5" step="0.1" min="0.1" max="24" required>
+          <label for="hoursInput">Average Daily Usage (Hours) <span class="required">*</span></label>
+          <input type="number" id="hoursInput" placeholder="e.g. 5" min="0.1" max="24" step="0.1">
+          <span class="error-msg" id="hoursError"></span>
         </div>
 
         <div class="form-group">
-          <label for="tariffRate">Electricity Rate ($ per kWh)</label>
-          <input type="number" id="tariffRate" value="0.16" step="0.01" min="0.01" required>
+          <label for="priceInput">Electricity Price (cents / kWh) <span class="required">*</span></label>
+          <input type="number" id="priceInput" value="32" min="1" step="0.1" placeholder="e.g. 32">
+          <span class="error-msg" id="priceError"></span>
         </div>
 
-        <button type="submit" class="btn btn-secondary">Calculate Annual Cost</button>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-secondary">Calculate Running Cost</button>
+          <button type="button" id="resetCalcBtn" class="btn btn-outline">Reset</button>
+        </div>
       </form>
 
-      <!-- Calculator Output -->
-      <div id="calcResult" class="result-box hidden">
-        <h3>Estimated Energy Cost for <span id="resName">-</span></h3>
-        <p><strong>Daily Usage:</strong> <span id="resDailyKwh">0</span> kWh</p>
-        <p><strong>Monthly Cost:</strong> $<span id="resMonthlyCost">0.00</span></p>
-        <p class="highlight-price"><strong>Annual Cost:</strong> $<span id="resAnnualCost">0.00</span></p>
+      <!-- Dynamic Calculation Results Panel -->
+      <div id="calcResultsPanel" class="results-panel hidden" aria-live="polite">
+        <h3>Calculation Summary</h3>
+        <div class="results-grid">
+          <div class="result-card">
+            <span class="result-label">Daily Consumption</span>
+            <span class="result-value" id="dailyKwh">0.00 kWh</span>
+            <span class="result-sub" id="dailyCost">$0.00</span>
+          </div>
+
+          <div class="result-card">
+            <span class="result-label">Monthly Consumption</span>
+            <span class="result-value" id="monthlyKwh">0.00 kWh</span>
+            <span class="result-sub" id="monthlyCost">$0.00</span>
+          </div>
+
+          <div class="result-card highlight">
+            <span class="result-label">Yearly Running Cost</span>
+            <span class="result-value" id="yearlyCost">$0.00</span>
+            <span class="result-sub" id="yearlyKwh">0.00 kWh / year</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <p class="section-intro">Click on any question below to reveal the answer.</p>
+
+      <div class="accordion">
+        
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What is a kilowatt-hour (kWh)?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>A kilowatt-hour (kWh) is the standard unit of energy electricity retailers use for billing. Running a 1,000 Watt (1 kW) appliance continuously for 1 hour consumes exactly 1 kWh of electricity.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How much does electricity cost in Australia?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Average electricity rates in Australia vary between 28c/kWh and 38c/kWh depending on your state (e.g., NSW, VIC, QLD, WA) and tariff arrangement (flat rate vs. peak/off-peak time-of-use).</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What is 'standby power' consumption?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>Standby power (or "vampire draw") is electricity consumed by electronic devices while turned off or in standby mode. Switching appliances off at the wall switch can save Australian households up to $100 annually.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How do energy star ratings work in Australia?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>The Energy Rating Label shows a star score from 1 to 10 stars. The higher the number of stars, the more energy-efficient the model is compared to other appliances of similar size.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- Shared Footer -->
   <footer class="footer">
     <div class="container footer-content">
-      <p>&copy; 2026 EcoWatts Appliance Energy Project. Built for Educational Purposes.</p>
+      <p>&copy; <span id="currentYear"></span> Appliance Energy Consumption Website | Designed by <strong>Student Name</strong></p>
+      <p class="ai-ack"><em>Acknowledgement: Generative AI assistance was utilized for boilerplate code structuring, CSS layout formatting, and interactive JavaScript logic refinement.</em></p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
