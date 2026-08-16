@@ -1,12 +1,12 @@
 /**
  * Appliance Energy Consumption Website
- * Handles Footer Date, Mobile Navigation, Accordion Interactivity,
- * Preset Selection, and Calculator Logic with Client-Side Input Validation.
+ * Interactive Logic, Animation Handlers, Accordions, and Validation.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   initDynamicYear();
   initMobileNav();
+  initScrollAnimations();
   initFaqAccordion();
   initEnergyCalculator();
 });
@@ -36,7 +36,28 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   3. FAQ Accordion Behavior
+   3. Scroll Reveal Animation Trigger
+   ========================================================================== */
+function initScrollAnimations() {
+  const sections = document.querySelectorAll(".section, .card, .calculator-section");
+  
+  // Attach reveal class to elements
+  sections.forEach((sec) => sec.classList.add("reveal"));
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        obs.unobserve(entry.target); // Trigger animation once
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach((sec) => observer.observe(sec));
+}
+
+/* ==========================================================================
+   4. Smooth Accordion Behavior
    ========================================================================== */
 function initFaqAccordion() {
   const accordionHeaders = document.querySelectorAll(".accordion-header");
@@ -46,7 +67,7 @@ function initFaqAccordion() {
       const item = header.parentElement;
       const isAlreadyActive = item.classList.contains("active");
 
-      // Close all accordion items
+      // Close all open items
       document.querySelectorAll(".accordion-item").forEach((i) => {
         i.classList.remove("active");
         i.querySelector(".accordion-header").setAttribute("aria-expanded", "false");
@@ -62,7 +83,7 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   4. Interactive Energy Calculator with Validation
+   5. Calculator Logic & Dynamic Form Animation
    ========================================================================== */
 function initEnergyCalculator() {
   const form = document.getElementById("energyCalcForm");
@@ -73,9 +94,8 @@ function initEnergyCalculator() {
   const resultsPanel = document.getElementById("calcResultsPanel");
   const resetBtn = document.getElementById("resetCalcBtn");
 
-  if (!form) return; // Exit if calculator not on page
+  if (!form) return;
 
-  // Handle Preset Selection Change
   applianceSelect.addEventListener("change", (e) => {
     const val = e.target.value;
     if (val !== "custom") {
@@ -84,26 +104,22 @@ function initEnergyCalculator() {
     }
   });
 
-  // Handle Form Submission
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // 1. Validate Inputs
     const isValid = validateCalculatorForm();
     if (!isValid) {
       resultsPanel.classList.add("hidden");
       return;
     }
 
-    // 2. Read Values
     const watts = parseFloat(wattageInput.value);
     const hours = parseFloat(hoursInput.value);
     const centsPerKwh = parseFloat(priceInput.value);
 
-    // 3. Perform Calculations
-    // kWh = (Watts * Hours) / 1000
+    // Formula computations
     const dailyKwh = (watts * hours) / 1000;
-    const monthlyKwh = dailyKwh * 30.4375; // Avg days in month
+    const monthlyKwh = dailyKwh * 30.4375;
     const yearlyKwh = dailyKwh * 365;
 
     const dollarsPerKwh = centsPerKwh / 100;
@@ -111,7 +127,7 @@ function initEnergyCalculator() {
     const monthlyCost = monthlyKwh * dollarsPerKwh;
     const yearlyCost = yearlyKwh * dollarsPerKwh;
 
-    // 4. Update Dynamic Results Panel DOM
+    // Update DOM
     document.getElementById("dailyKwh").textContent = `${dailyKwh.toFixed(2)} kWh`;
     document.getElementById("dailyCost").textContent = `$${dailyCost.toFixed(2)} / day`;
 
@@ -121,11 +137,13 @@ function initEnergyCalculator() {
     document.getElementById("yearlyCost").textContent = `$${yearlyCost.toFixed(2)}`;
     document.getElementById("yearlyKwh").textContent = `${yearlyKwh.toFixed(1)} kWh / year`;
 
-    // 5. Reveal Results Panel
+    // Re-trigger popup animation
     resultsPanel.classList.remove("hidden");
+    resultsPanel.style.animation = "none";
+    void resultsPanel.offsetWidth; // Force CSS reflow
+    resultsPanel.style.animation = "popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards";
   });
 
-  // Handle Reset Button
   resetBtn.addEventListener("click", () => {
     form.reset();
     applianceSelect.value = "custom";
@@ -133,26 +151,22 @@ function initEnergyCalculator() {
     resultsPanel.classList.add("hidden");
   });
 
-  /* Input Validation Helpers */
   function validateCalculatorForm() {
     let valid = true;
     clearAllErrors();
 
-    // Validate Wattage
     const wattsVal = parseFloat(wattageInput.value);
     if (isNaN(wattsVal) || wattsVal <= 0) {
       showError(wattageInput, "wattageError", "Please enter a valid power rating (> 0 Watts).");
       valid = false;
     }
 
-    // Validate Hours
     const hoursVal = parseFloat(hoursInput.value);
     if (isNaN(hoursVal) || hoursVal <= 0 || hoursVal > 24) {
       showError(hoursInput, "hoursError", "Please enter daily usage between 0.1 and 24 hours.");
       valid = false;
     }
 
-    // Validate Tariff Price
     const priceVal = parseFloat(priceInput.value);
     if (isNaN(priceVal) || priceVal <= 0) {
       showError(priceInput, "priceError", "Please enter a valid electricity rate (cents/kWh).");
@@ -163,19 +177,18 @@ function initEnergyCalculator() {
   }
 
   function showError(inputElem, errorSpanId, message) {
+    inputElem.classList.remove("invalid-input");
+    void inputElem.offsetWidth; // Trigger reflow for shake animation
     inputElem.classList.add("invalid-input");
+
     const errorSpan = document.getElementById(errorSpanId);
-    if (errorSpan) {
-      errorSpan.textContent = message;
-    }
+    if (errorSpan) errorSpan.textContent = message;
   }
 
   function clearError(inputElem, errorSpanId) {
     inputElem.classList.remove("invalid-input");
     const errorSpan = document.getElementById(errorSpanId);
-    if (errorSpan) {
-      errorSpan.textContent = "";
-    }
+    if (errorSpan) errorSpan.textContent = "";
   }
 
   function clearAllErrors() {

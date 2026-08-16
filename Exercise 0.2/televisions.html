@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Televisions | Appliance Energy Consumption</title>
+  <title>Televisions | Appliance Energy Consumption Australia</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -27,20 +27,47 @@
     </div>
   </header>
 
-  <!-- Subpage Banner -->
+  <!-- Subpage Banner with Aussie Flag -->
   <section class="subpage-header">
     <div class="container">
-      <h1>Television Energy Consumption</h1>
-      <p>Comparing screen display technologies, size factors, and Australian star rating impacts.</p>
+      <h1>🇦🇺 Television Energy Consumption & Australian Standards</h1>
+      <p>Comparing display panels, GEMS star ratings, and energy testing standards in Australia.</p>
     </div>
   </section>
 
   <!-- Main Content -->
   <main class="container">
 
+    <!-- Australian Certification & Standards Card Grid -->
     <section class="section">
-      <h2>Display Technology & Power Impact</h2>
-      <p>Modern televisions differ significantly in energy draw based on screen size, backlight intensity, and panel technology (OLED, QLED, LED, or legacy Plasma).</p>
+      <h2>Australian Regulatory Certifications & Standards</h2>
+      <p class="section-intro">Every television sold in Australia must comply with mandatory safety, electromagnetic, and energy efficiency standards before entering the market:</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🎛️</div>
+          <h3>ACMA & RCM Compliance</h3>
+          <p>The <strong>Regulatory Compliance Mark (RCM)</strong> is mandated by the <strong>ACMA</strong> (equivalent to Malaysia's MCMC) and ERAC to ensure devices meet Australian electrical safety and radio interference (EMC) requirements.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🏷️</div>
+          <h3>GEMS Regulator & MEPS</h3>
+          <p>Under the <em>Greenhouse and Energy Minimum Standards (GEMS) Act 2012</em>, all TVs must meet Minimum Energy Performance Standards (MEPS) and display the official Star Rating label.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3>Calculation Standard (AS/NZS 62087)</h3>
+          <p>Australian TV energy consumption figures are measured using <strong>AS/NZS 62087</strong>, calculated assuming a standardized duty cycle (On-Mode viewing + 0.5W–1W Standby mode).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Display Technology Comparison Table -->
+    <section class="section">
+      <h2>Display Technology & Annual Power Cost</h2>
+      <p class="section-intro">Comparative breakdown for 55-inch models based on the Australian average tariff of <strong>32c / kWh</strong> and 5 hours of active daily use:</p>
 
       <div class="table-wrapper">
         <table class="data-table">
@@ -48,41 +75,51 @@
             <tr>
               <th>Display Technology</th>
               <th>Avg Wattage (55" Screen)</th>
-              <th>Est. Annual Cost (5 hrs/day @ 32c)</th>
-              <th>Efficiency Rating</th>
+              <th>Daily Usage (kWh)</th>
+              <th>Est. Annual Cost (at 32c/kWh)</th>
+              <th>GEMS Star Potential</th>
+              <th>Efficiency Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>LED / LCD</strong></td>
-              <td>60 W - 80 W</td>
-              <td>$35.00 - $46.70</td>
-              <td><span class="badge badge-success">High</span></td>
+              <td>60 W – 80 W</td>
+              <td>0.30 – 0.40 kWh</td>
+              <td>$35.00 – $46.70</td>
+              <td>6.0 – 8.0 Stars</td>
+              <td><span class="badge badge-success">High Efficiency</span></td>
             </tr>
             <tr>
-              <td><strong>QLED</strong></td>
-              <td>85 W - 110 W</td>
-              <td>$49.60 - $64.20</td>
+              <td><strong>QLED (Mini-LED)</strong></td>
+              <td>85 W – 110 W</td>
+              <td>0.43 – 0.55 kWh</td>
+              <td>$49.60 – $64.20</td>
+              <td>5.0 – 6.5 Stars</td>
               <td><span class="badge badge-success">Moderate-High</span></td>
             </tr>
             <tr>
               <td><strong>OLED</strong></td>
-              <td>100 W - 140 W</td>
-              <td>$58.40 - $81.70</td>
+              <td>100 W – 140 W</td>
+              <td>0.50 – 0.70 kWh</td>
+              <td>$58.40 – $81.70</td>
+              <td>4.0 – 5.5 Stars</td>
               <td><span class="badge badge-warning">Moderate</span></td>
             </tr>
             <tr>
               <td><strong>Plasma (Legacy)</strong></td>
-              <td>250 W - 380 W</td>
-              <td>$146.00 - $221.90</td>
-              <td><span class="badge badge-danger">Poor</span></td>
+              <td>250 W – 380 W</td>
+              <td>1.25 – 1.90 kWh</td>
+              <td>$146.00 – $221.90</td>
+              <td>1.0 – 2.0 Stars</td>
+              <td><span class="badge badge-danger">Poor (Obsolete)</span></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Energy Efficiency Tips for TV Users -->
+    <!-- Practical Energy Saving Tips -->
     <section class="section">
       <h2>Practical TV Energy Saving Tips</h2>
       <div class="card-grid">
@@ -93,12 +130,12 @@
 
         <div class="card">
           <h3>2. Turn Off 'Quick Start' Standby</h3>
-          <p>Quick start features keep the TV processor running continuously in low power mode, drawing up to 15W continuously when turned off.</p>
+          <p>Quick-start features keep the TV internal processor active in standby, consuming 10W–15W continuously when not in use.</p>
         </div>
 
         <div class="card">
-          <h3>3. Choose Energy Star Models</h3>
-          <p>Look for Australian Energy Rating Labels with 6+ stars when purchasing new television sets.</p>
+          <h3>3. Check the GEMS Star Rating</h3>
+          <p>Choosing a TV with 7 stars instead of 4 stars can save up to $180 over the typical 7-year lifespan of the television.</p>
         </div>
       </div>
     </section>
@@ -109,10 +146,9 @@
   <footer class="footer">
     <div class="container footer-content">
       <p>&copy; <span id="currentYear"></span> Appliance Energy Consumption Website | Designed by <strong>Ibrahim Mahbub</strong></p>
-      
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
-</html>
+</html> 
