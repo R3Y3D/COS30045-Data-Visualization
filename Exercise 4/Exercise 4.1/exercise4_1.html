@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4.1: Draw SVGs | Appliance Energy Consumption Australia</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .svg-display-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .svg-canvas {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      background-color: #fff;
+    }
+    .annotation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .annotation-card {
+      background: #fdfdfd;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .annotation-card h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      color: #1e293b;
+    }
+    .annotation-card code {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      word-break: break-word;
+    }
+    .annotation-card img {
+      width: 100%;
+      height: auto;
+      border: 1px dashed #cbd5e1;
+      border-radius: 4px;
+      background: #fff;
+      min-height: 160px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link" title="Return to Home">
+        <img src="assets/img/logo.png" alt="Appliance Energy Logo" class="nav-logo">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="televisions.html" class="nav-link">Televisions</a></li>
+          <li><a href="exercise4_1.html" class="nav-link active">Exercise 4.1</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Exercise 4.1: Draw SVGs</h1>
+      <p>Exploring SVG primitive shapes, styling attributes, and coordinate mapping foundational to D3 data visualisations.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Step 1: SVG House & Garden -->
+    <section class="section">
+      <h2>Step 1: SVG House &amp; Garden</h2>
+      <p class="section-intro">Rendered via inline SVG using coordinate-based vector primitives: <code>&lt;rect&gt;</code>, <code>&lt;circle&gt;</code>, <code>&lt;polygon&gt;</code>, <code>&lt;path&gt;</code>, and <code>&lt;text&gt;</code> inside an 800&times;800 viewport.</p>
+
+      <div class="svg-display-wrap">
+        <svg class="svg-canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="500" height="500">
+          <!-- Sky background -->
+          <rect x="0" y="0" width="800" height="500" fill="#8ecae6" />
+
+          <!-- Grass / Ground -->
+          <rect x="0" y="500" width="800" height="300" fill="#008000" />
+
+          <!-- Sun -->
+          <circle cx="660" cy="160" r="65" fill="#ffee00" />
+
+          <!-- Tree Trunk -->
+          <rect x="125" y="420" width="35" height="150" fill="#a0522d" />
+
+          <!-- Tree Foliage -->
+          <circle cx="115" cy="400" r="45" fill="#228b22" />
+          <circle cx="170" cy="400" r="45" fill="#228b22" />
+          <circle cx="142" cy="430" r="45" fill="#228b22" />
+
+          <!-- House Body -->
+          <rect x="240" y="325" width="320" height="245" fill="#8c4b18" />
+
+          <!-- House Roof -->
+          <polygon points="400,165 240,325 560,325" fill="#c47833" />
+
+          <!-- Windows -->
+          <rect x="272" y="360" width="65" height="65" fill="#b0d8ea" />
+          <rect x="463" y="360" width="65" height="65" fill="#b0d8ea" />
+
+          <!-- Door -->
+          <rect x="368" y="440" width="65" height="130" fill="#9e4b2d" />
+
+          <!-- Doorknob -->
+          <circle cx="415" cy="505" r="8" fill="#000000" />
+
+          <!-- Curved Garden Paths -->
+          <path d="M 450,810 Q 200,690 400,580" fill="none" stroke="#ffa500" stroke-width="8" />
+          <path d="M 390,810 Q 160,690 360,580" fill="none" stroke="#ffa500" stroke-width="8" />
+
+          <!-- House Label -->
+          <text x="610" y="475" font-family="sans-serif" font-size="40" fill="#000000">House</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Step 2: SVG Coordinates Annotation -->
+    <section class="section">
+      <h2>Step 2: Coordinate System Annotations</h2>
+      <p class="section-intro">SVG coordinates start at <strong>(0,0)</strong> in the top-left corner. Horizontal distance increases to the right (+X), and vertical distance increases downward (+Y).</p>
+
+      <div class="annotation-grid">
+        <div class="annotation-card">
+          <h3>1. &lt;rect&gt; Coordinate Breakdown</h3>
+          <p>Code: <code>&lt;rect x="240" y="325" width="320" height="245" /&gt;</code></p>
+          <p>Top-left anchor begins at <strong>(240, 325)</strong>, spanning 320 units right and 245 units downward.</p>
+          <img src="assets/img/annotated-rect.png" alt="Annotated screenshot showing rect coordinates">
+        </div>
+
+        <div class="annotation-card">
+          <h3>2. &lt;circle&gt; Coordinate Breakdown</h3>
+          <p>Code: <code>&lt;circle cx="660" cy="160" r="65" /&gt;</code></p>
+          <p>Center point anchored at <strong>(660, 160)</strong> with a radius extending 65 units outwards.</p>
+          <img src="assets/img/annotated-circle.png" alt="Annotated screenshot showing circle coordinates">
+        </div>
+
+        <div class="annotation-card">
+          <h3>3. &lt;polygon&gt; Coordinate Breakdown</h3>
+          <p>Code: <code>&lt;polygon points="400,165 240,325 560,325" /&gt;</code></p>
+          <p>Constructed by sequentially connecting 3 coordinate vertices: <strong>(400, 165)</strong> &rarr; <strong>(240, 325)</strong> &rarr; <strong>(560, 325)</strong>.</p>
+          <img src="assets/img/annotated-polygon.png" alt="Annotated screenshot showing polygon coordinates">
+        </div>
+
+        <div class="annotation-card">
+          <h3>4. &lt;path&gt; Coordinate Breakdown</h3>
+          <p>Code: <code>&lt;path d="M 450,810 Q 200,690 400,580" /&gt;</code></p>
+          <p>Starts at <strong>(450, 810)</strong> via MoveTo (<code>M</code>), curving toward destination <strong>(400, 580)</strong> guided by control point <strong>(200, 690)</strong>.</p>
+          <img src="assets/img/annotated-path.png" alt="Annotated screenshot showing path coordinates">
+        </div>
+
+        <div class="annotation-card">
+          <h3>5. &lt;text&gt; Coordinate Breakdown</h3>
+          <p>Code: <code>&lt;text x="610" y="475"&gt;House&lt;/text&gt;</code></p>
+          <p>Anchored by the starting point of the font baseline at coordinate <strong>(610, 475)</strong>.</p>
+          <img src="assets/img/annotated-text.png" alt="Annotated screenshot showing text coordinates">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="currentYear"></span> Appliance Energy Consumption Website | Designed by <strong>Ibrahim Mahbub</strong></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
