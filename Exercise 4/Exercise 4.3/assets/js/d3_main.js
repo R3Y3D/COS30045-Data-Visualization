@@ -81,3 +81,25 @@ d3.select(".hero-content")
   .style("padding", "8px 16px")
   .style("border-radius", "6px")
   .style("margin-top", "12px");
+
+  // ===================================================================
+// Step 4: Append SVG elements using D3
+// ===================================================================
+
+// Select the SVG container and append a styled rectangle
+d3.select("#d3-canvas")
+  .append("rect")
+  .attr("x", 50)
+  .attr("y", 50)
+  .attr("width", 100)
+  .attr("height", 30)
+  .style("fill", "green");
+
+// Experiment: Append a second bar to preview how a bar chart works
+d3.select("#d3-canvas")
+  .append("rect")
+  .attr("x", 170)
+  .attr("y", 30)
+  .attr("width", 100)
+  .attr("height", 50)
+  .style("fill", "#0077b6");
