@@ -657,3 +657,13 @@ nav ul {
   color: #b91c1c;
   border: 1px solid #fecaca;
 }
+
+/* ==========================================================================
+   Responsive SVG Container for D3 Canvas
+   ========================================================================== */
+.responsive-svg-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 1200px;
+}

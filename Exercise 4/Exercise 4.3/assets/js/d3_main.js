@@ -14,92 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
+ * Appliance Energy Consumption Australia
  * COS30045 - Data Visualisation
- * Exercise 4.2 - Step 2: Selecting and Styling HTML elements with D3
+ * Exercise 4.3: D3 Data Binding & Visualisation Setup
  */
 
-// 1. Required core task: select the main <h1> and change its color to green
-d3.select("h1")
-  .style("color", "green");
+document.addEventListener("DOMContentLoaded", () => {
+  // Step 2: Create responsive SVG container with viewBox & temporary debug border
+  const svg = d3.select(".responsive-svg-container")
+    .append("svg")
+      .attr("viewBox", "0 0 1200 1600")
+      .style("border", "1px solid black");
 
-// -------------------------------------------------------------------
-// Experiments selecting other HTML elements & altering appearance
-// -------------------------------------------------------------------
-
-// 2. Select the hero paragraph and change its font weight & style
-d3.select(".hero p")
-  .style("font-style", "italic")
-  .style("font-size", "1.25rem");
-
-// 3. Select all section headings (<h2>) and change their color with multi-chaining
-d3.selectAll(".section h2")
-  .style("color", "#0077b6")
-  .style("letter-spacing", "0.5px");
-
-// 4. Select the primary CTA button and alter its styling dynamically
-d3.select(".hero .btn-primary")
-  .style("background-color", "#2a9d8f")
-  .style("border", "2px solid #ffffff")
-  .style("box-shadow", "0 6px 16px rgba(42, 157, 143, 0.4)");
-
-// 5. Select the tariff card and add a distinct highlight border & background tint
-d3.select(".card-grid .card:first-child")
-  .style("border-left", "6px solid #ff9f1c")
-  .style("background-color", "#fffbf5");
-
-  // ===================================================================
-// Step 3: Append elements using D3
-// ===================================================================
-
-// 1. Basic append: Selects the FIRST matching <div> on the page 
-// and appends a <p> tag with text to the end of that div
-d3.select("div")
-  .append("p")
-  .text("Purchasing a low energy consumption TV will help with your energy bills!")
-  .style("color", "#0077b6")
-  .style("font-weight", "600");
-
-// -------------------------------------------------------------------
-// Experimenting with d3.selectAll("div") vs d3.select("div")
-// -------------------------------------------------------------------
-
-// If you run d3.selectAll("div").append("p"), D3 will append this paragraph 
-// to EVERY SINGLE <div> present on the entire webpage:
-/*
-d3.selectAll("div")
-  .append("p")
-  .text("Purchasing a low energy consumption TV will help with your energy bills!")
-  .style("color", "#e76f51");
-*/
-
-// Targeted append: Usually in D3 projects, you target a specific container 
-// (like a dedicated chart div or card) using its class or ID:
-d3.select(".hero-content")
-  .append("p")
-  .text("💡 Pro-Tip: Energy-efficient appliances can save up to $300 a year.")
-  .style("background", "rgba(255, 255, 255, 0.15)")
-  .style("padding", "8px 16px")
-  .style("border-radius", "6px")
-  .style("margin-top", "12px");
-
-  // ===================================================================
-// Step 4: Append SVG elements using D3
-// ===================================================================
-
-// Select the SVG container and append a styled rectangle
-d3.select("#d3-canvas")
-  .append("rect")
-  .attr("x", 50)
-  .attr("y", 50)
-  .attr("width", 100)
-  .attr("height", 30)
-  .style("fill", "green");
-
-// Experiment: Append a second bar to preview how a bar chart works
-d3.select("#d3-canvas")
-  .append("rect")
-  .attr("x", 170)
-  .attr("y", 30)
-  .attr("width", 100)
-  .attr("height", 50)
-  .style("fill", "#0077b6");
+  // Step 3: Append test rectangle with hard-coded attributes
+  svg
+    .append("rect")
+      .attr("x", 10)
+      .attr("y", 10)
+      .attr("width", 414)
+      .attr("height", 16)
+      .attr("fill", "blue");
+});
