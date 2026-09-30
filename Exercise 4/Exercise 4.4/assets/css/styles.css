@@ -2,24 +2,24 @@
    1. CSS Custom Variables & Root Reset
    ========================================================================== */
 :root {
-  --primary: #0077b6;
-  --primary-hover: #023e8a;
-  --secondary: #00b4d8;
-  --accent: #ff9f1c;
-  --accent-hover: #e08705;
-  --bg-color: #f8fafc;
+  --primary: #f39c24;
+  --primary-hover: #6b5b3b;
+  --secondary: #fbe596;
+  --accent: #d97706;
+  --accent-hover: #b45309;
+  --bg-color: #fffdf7;
   --card-bg: #ffffff;
-  --text-dark: #1e293b;
-  --text-muted: #64748b;
-  --border-color: #cbd5e1;
+  --text-dark: #2d261e;
+  --text-muted: #6b5b3b;
+  --border-color: #edd9b0;
   --danger: #ef4444;
   --success-bg: #dcfce7;
   --success-text: #15803d;
   
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --radius: 10px;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-hover: 0 12px 20px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(107, 91, 59, 0.08), 0 2px 4px -1px rgba(107, 91, 59, 0.04);
+  --shadow-hover: 0 12px 20px -3px rgba(107, 91, 59, 0.15), 0 4px 6px -2px rgba(107, 91, 59, 0.08);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -76,7 +76,7 @@ main {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(107, 91, 59, 0.05);
   transition: var(--transition);
 }
 
@@ -122,14 +122,14 @@ nav ul {
 
 .nav-link:hover {
   background-color: var(--secondary);
-  color: #ffffff;
+  color: var(--primary-hover);
   transform: translateY(-2px);
 }
 
 .nav-link.active {
   background-color: var(--primary);
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.3);
+  box-shadow: 0 4px 10px rgba(243, 156, 36, 0.35);
 }
 
 .menu-toggle {
@@ -150,7 +150,7 @@ nav ul {
    4. Hero Keyframe Animation
    ========================================================================== */
 .hero {
-  background: linear-gradient(135deg, var(--primary) 0%, #03045e 100%);
+  background: linear-gradient(135deg, #f39c24 0%, #6b5b3b 100%);
   color: #ffffff;
   padding: 70px 0;
   text-align: center;
@@ -182,7 +182,7 @@ nav ul {
   font-size: 1.15rem;
   max-width: 700px;
   margin: 0 auto 28px auto;
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 /* ==========================================================================
@@ -201,14 +201,14 @@ nav ul {
 }
 
 .btn-primary {
-  background-color: var(--accent);
+  background-color: var(--primary-hover);
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
+  background-color: #53452b;
   transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(255, 159, 28, 0.35);
+  box-shadow: 0 8px 15px rgba(107, 91, 59, 0.35);
 }
 
 .btn-primary:active {
@@ -221,9 +221,9 @@ nav ul {
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 119, 182, 0.3);
+  box-shadow: 0 6px 12px rgba(243, 156, 36, 0.35);
 }
 
 .btn-outline {
@@ -233,7 +233,8 @@ nav ul {
 }
 
 .btn-outline:hover {
-  background-color: var(--border-color);
+  background-color: var(--secondary);
+  color: var(--primary-hover);
   transform: translateY(-2px);
 }
 
@@ -274,7 +275,7 @@ nav ul {
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
-  border-color: var(--secondary);
+  border-color: var(--primary);
 }
 
 .card-icon {
@@ -290,7 +291,7 @@ nav ul {
 
 .card h3 {
   margin-bottom: 10px;
-  color: var(--primary);
+  color: var(--primary-hover);
 }
 
 .card-link {
@@ -304,6 +305,7 @@ nav ul {
 
 .card-link:hover {
   transform: translateX(4px);
+  color: var(--primary-hover);
 }
 
 /* ==========================================================================
@@ -354,7 +356,7 @@ nav ul {
 .form-group select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+  box-shadow: 0 0 0 3px rgba(243, 156, 36, 0.25);
 }
 
 /* Input Shake Animation on Form Error */
@@ -388,8 +390,8 @@ nav ul {
 .results-panel {
   margin-top: 30px;
   padding: 26px;
-  background-color: #e0f2fe;
-  border: 1px solid #7dd3fc;
+  background-color: #fdf8e8;
+  border: 1px solid var(--secondary);
   border-radius: var(--radius);
   animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -435,8 +437,8 @@ nav ul {
 }
 
 .result-card.highlight {
-  background-color: #f0fdf4;
-  border-color: #86efac;
+  background-color: #fffdf5;
+  border-color: var(--primary);
 }
 
 .result-label {
@@ -453,7 +455,7 @@ nav ul {
 }
 
 .result-card.highlight .result-value {
-  color: #15803d;
+  color: var(--accent);
 }
 
 .result-sub {
@@ -500,7 +502,7 @@ nav ul {
 }
 
 .accordion-header:hover {
-  background-color: #f8fafc;
+  background-color: #fffdf7;
 }
 
 .accordion-icon {
@@ -536,8 +538,8 @@ nav ul {
    9. Footer & Responsive Drawer
    ========================================================================== */
 .footer {
-  background-color: var(--text-dark);
-  color: #94a3b8;
+  background-color: #3b3123;
+  color: #d1c5b0;
   padding: 30px 0;
   text-align: center;
   font-size: 0.9rem;
@@ -545,7 +547,7 @@ nav ul {
 }
 
 .footer strong {
-  color: #ffffff;
+  color: var(--secondary);
 }
 
 @media (max-width: 768px) {
@@ -603,7 +605,7 @@ nav ul {
 }
 
 .data-table thead {
-  background-color: #f1f5f9;
+  background-color: #fdf8e8;
   border-bottom: 2px solid var(--border-color);
 }
 
@@ -626,7 +628,7 @@ nav ul {
 }
 
 .data-table tbody tr:hover {
-  background-color: #f8fafc;
+  background-color: #fffdf5;
 }
 
 /* Status Badges */
