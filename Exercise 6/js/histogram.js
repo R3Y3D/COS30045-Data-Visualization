@@ -33,12 +33,17 @@ const drawHistogram = (data) => {
     .data(bins)
     .join("rect")
       .attr("x", d => xScale(d.x0))
-      .attr("y", d => yScale(d.length))
       .attr("width", d => xScale(d.x1) - xScale(d.x0))
-      .attr("height", d => innerHeight - yScale(d.length))
       .attr("fill", barColor)
       .attr("stroke", bodyBackgroundColor)
-      .attr("stroke-width", 2);
+      .attr("stroke-width", 2)
+      .attr("y", innerHeight)
+      .attr("height", 0)
+      .transition()
+        .duration(600)
+        .ease(d3.easeCubicInOut)
+        .attr("y", d => yScale(d.length))
+        .attr("height", d => innerHeight - yScale(d.length));
 
   const bottomAxis = d3.axisBottom(xScale)
     .tickValues(d3.range(minEng, maxEng + 1, 200))

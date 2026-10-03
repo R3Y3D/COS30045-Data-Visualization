@@ -1,0 +1,35 @@
+.responsive-svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 55%;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.responsive-svg-container svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.axis-label {
+  font-family: var(--font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  fill: #6b5b3b;
+}
+
+.axis text {
+  font-family: var(--font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: 11px;
+  fill: #2d261e;
+}
+
+.axis path,
+.axis line {
+  stroke: #edd9b0;
+}

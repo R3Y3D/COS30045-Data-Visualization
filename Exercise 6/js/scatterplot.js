@@ -33,9 +33,14 @@ const drawScatterplot = (data) => {
     .join("circle")
       .attr("cx", d => xScaleS(d.star))
       .attr("cy", d => yScaleS(d.energyConsumption))
-      .attr("r", 4)
       .attr("fill", d => colorScale(d.screenTech))
-      .attr("opacity", 0.5);
+      .attr("r", 0)
+      .attr("opacity", 0)
+      .transition()
+        .duration(600)
+        .ease(d3.easeCubicInOut)
+        .attr("r", 4)
+        .attr("opacity", 0.5);
 
   const bottomAxis = d3.axisBottom(xScaleS).ticks(8);
   innerChartS.append("g")
