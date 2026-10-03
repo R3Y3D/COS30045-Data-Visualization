@@ -1,9 +1,3 @@
-/**
- * Appliance Energy Consumption Australia
- * COS30045 - Data Visualisation
- * Exercise 4.3: D3 Data Binding & Visualisation Setup
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   // Step 2: Create responsive SVG container with viewBox & debug border
   const svg = d3.select(".responsive-svg-container")
@@ -20,18 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .attr("height", 16)
       .attr("fill", "blue");
 
-  // ===================================================================
   // Step 1 & 2: Load CSV and cast count attribute to number
-  // ===================================================================
   d3.csv("data/Exercise 4.3_CSV_Export.csv", d => {
     return {
       brand: d.brand,
       count: +d.count
     };
   }).then(data => {
-    // ===================================================================
     // Step 3: Dataset inspection & summary metrics
-    // ===================================================================
     console.log("Raw dataset:", data);
     console.log("Record count (length):", data.length);
     console.log("Maximum count:", d3.max(data, d => d.count));
@@ -49,9 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ===================================================================
 // Placeholder function for Exercise 4.4 / upcoming chart generation
-// ===================================================================
 function drawBarChart(data) {
   console.log("drawBarChart called with data:", data);
   // Bar chart D3 data binding code will go here

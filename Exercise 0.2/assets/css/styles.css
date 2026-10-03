@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. CSS Custom Variables & Root Reset
-   ========================================================================== */
+/*1. CSS Custom Variables & Root Reset*/
 :root {
   --primary: #f39c24;
   --primary-hover: #6b5b3b;
@@ -53,9 +51,7 @@ main {
   margin: 0 auto;
 }
 
-/* ==========================================================================
-   2. Scroll Reveal Animations
-   ========================================================================== */
+/*2. Scroll Reveal Animations*/
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -67,9 +63,7 @@ main {
   transform: translateY(0);
 }
 
-/* ==========================================================================
-   3. Header & Navigation Animations
-   ========================================================================== */
+/*3. Header & Navigation Animations*/
 .navbar {
   background-color: var(--card-bg);
   border-bottom: 2px solid var(--border-color);
@@ -146,9 +140,7 @@ nav ul {
   transform: scale(1.1);
 }
 
-/* ==========================================================================
-   4. Hero Keyframe Animation
-   ========================================================================== */
+/*4. Hero Keyframe Animation*/
 .hero {
   background: linear-gradient(135deg, #f39c24 0%, #6b5b3b 100%);
   color: #ffffff;
@@ -185,9 +177,7 @@ nav ul {
   opacity: 0.95;
 }
 
-/* ==========================================================================
-   5. Buttons & Hover Micro-interactions
-   ========================================================================== */
+/* 5. Buttons & Hover Micro-interactions*/
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -238,9 +228,7 @@ nav ul {
   transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   6. Cards & Grid Layouts
-   ========================================================================== */
+/* 6. Cards & Grid Layouts */
 .section {
   padding: 45px 0;
   border-bottom: 1px solid var(--border-color);
@@ -307,9 +295,7 @@ nav ul {
   transform: translateX(4px);
 }
 
-/* ==========================================================================
-   7. Form Inputs & Error Shake Animation
-   ========================================================================== */
+/*7. Form Inputs & Error Shake Animation*/
 .calculator-section {
   background-color: var(--card-bg);
   padding: 35px;
@@ -462,9 +448,7 @@ nav ul {
   color: var(--text-dark);
 }
 
-/* ==========================================================================
-   8. Accordion CSS Grid Slide-Down Animation
-   ========================================================================== */
+/*8. Accordion CSS Grid Slide-Down Animation */
 .accordion {
   display: flex;
   flex-direction: column;
@@ -533,9 +517,7 @@ nav ul {
   color: var(--text-dark);
 }
 
-/* ==========================================================================
-   9. Footer & Responsive Drawer
-   ========================================================================== */
+/*  9. Footer & Responsive Drawer */
 .footer {
   background-color: #3b3123;
   color: #d1c5b0;
@@ -583,9 +565,7 @@ nav ul {
   }
 }
 
-/* ==========================================================================
-   Table & Badge Styling
-   ========================================================================== */
+/* Table & Badge Styling */
 .table-wrapper {
   width: 100%;
   overflow-x: auto;

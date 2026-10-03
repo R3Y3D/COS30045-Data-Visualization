@@ -1,9 +1,3 @@
-/**
- * Appliance Energy Consumption Australia
- * COS30045 - Data Visualisation
- * Exercise 4.7: Adding Labels to Bar Chart
- */
-
 // Global SVG reference
 let svg;
 

@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo-link" title="Return to Home">
@@ -28,7 +27,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-content">
       <h1>Energy Rating & Appliance Consumption in Australia</h1>
@@ -37,15 +35,12 @@
     </div>
   </section>
 
-  <!-- Main Content -->
   <main class="container">
 
-    <!-- Exercise 6 D3 Visualisations Section -->
     <section class="section">
       <h2>Television Energy Consumption Visualisations</h2>
       <p class="section-intro">Explore TV energy consumption distributions and ratings from the January 2026 dataset.</p>
 
-      <!-- 6.1 & 6.2 Histogram Card -->
       <div class="card" style="margin-bottom: 2rem;">
         <h3>Energy Consumption Distribution (Exercise 6.1 & 6.2)</h3>
         <p class="section-intro" style="margin-bottom: 1rem;">Filter television models by screen technology.</p>
@@ -54,7 +49,6 @@
         <div class="responsive-svg-container" id="histogram"></div>
       </div>
 
-      <!-- 6.3 Scatterplot Card -->
       <div class="card" style="margin-bottom: 2rem;">
         <h3>Energy Consumption vs. Star Rating (Exercise 6.3)</h3>
         <p class="section-intro" style="margin-bottom: 1rem;">Comparing power usage against GEMS energy star ratings across screen types.</p>
@@ -73,7 +67,6 @@
       </div>
     </section>
 
-    <!-- Australian Market Overview -->
     <section class="section">
       <h2>Understanding Household Energy Use in Australia</h2>
       <p class="section-intro">Australian households spend an average of $1,600 to $2,200 per year on electricity. Understanding the power draw (wattage) of standard appliances helps minimize peak tariff costs.</p>
@@ -100,7 +93,6 @@
       </div>
     </section>
 
-    <!-- Interactive Appliance Energy Calculator -->
     <section id="calculator" class="section calculator-section">
       <h2>Interactive Appliance Energy Calculator</h2>
       <p>Select a preset Australian appliance or enter custom power values to calculate daily, monthly, and yearly costs.</p>
@@ -142,7 +134,6 @@
         </div>
       </form>
 
-      <!-- Results Panel -->
       <div id="calcResultsPanel" class="results-panel hidden" aria-live="polite">
         <h3>Calculation Summary</h3>
         <div class="results-grid">
@@ -167,7 +158,6 @@
       </div>
     </section>
 
-    <!-- FAQ Accordion Section -->
     <section class="section">
       <h2>Frequently Asked Questions (FAQ)</h2>
       <p class="section-intro">Click on any question below to reveal the answer.</p>
@@ -217,14 +207,13 @@
 
   </main>
 
-  <!-- Shared Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <p>&copy; <span id="currentYear"></span> Appliance Energy Consumption Website | Designed by <strong>Ibrahim Mahbub</strong></p>
+      <p class="ai-ack"><em>Acknowledgement: Generative AI assistance was utilized for code structure and JavaScript fix.</em></p>
     </div>
   </footer>
 
-  <!-- Scripts in dependency order -->
   <script src="js/main.js"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="js/load-data.js"></script>

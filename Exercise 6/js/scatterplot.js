@@ -1,24 +1,16 @@
-/**
- * Exercise 6.3 & 6.4: Scatterplot Implementation
- */
 const drawScatterplot = (data) => {
-  // Clear any existing svg inside scatterplot container
   d3.select("#scatterplot").selectAll("*").remove();
 
-  // Create SVG container
   const svg = d3.select("#scatterplot")
     .append("svg")
     .attr("viewBox", `0 0 ${width} ${height}`);
 
-  // Create inner chart group with margins
   innerChartS = svg
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  // Filter clean numerical data points
   const validData = data.filter(d => !isNaN(d.star) && !isNaN(d.energyConsumption) && d.star > 0);
 
-  // Set domains
   const maxStar = d3.max(validData, d => d.star) || 8;
   const maxEnergy = d3.max(validData, d => d.energyConsumption) || 2700;
 
@@ -36,7 +28,6 @@ const drawScatterplot = (data) => {
     .domain(Array.from(new Set(validData.map(d => d.screenTech))))
     .range(d3.schemeCategory10);
 
-  // Draw circles
   innerChartS.selectAll("circle")
     .data(validData)
     .join("circle")
@@ -46,20 +37,17 @@ const drawScatterplot = (data) => {
       .attr("fill", d => colorScale(d.screenTech))
       .attr("opacity", 0.5);
 
-  // X-Axis (Star Rating)
   const bottomAxis = d3.axisBottom(xScaleS).ticks(8);
   innerChartS.append("g")
     .attr("class", "axis x-axis")
     .attr("transform", `translate(0, ${innerHeight})`)
     .call(bottomAxis);
 
-  // Y-Axis (Energy Consumption)
   const leftAxis = d3.axisLeft(yScaleS).tickFormat(d3.format(","));
   innerChartS.append("g")
     .attr("class", "axis y-axis")
     .call(leftAxis);
 
-  // Y-axis label
   innerChartS.append("text")
     .attr("class", "axis-label")
     .attr("x", -margin.left + 5)
@@ -67,7 +55,6 @@ const drawScatterplot = (data) => {
     .attr("text-anchor", "start")
     .text("Labeled Energy Consumption (kWh/year)");
 
-  // X-axis label
   innerChartS.append("text")
     .attr("class", "axis-label")
     .attr("x", innerWidth)
@@ -75,7 +62,6 @@ const drawScatterplot = (data) => {
     .attr("text-anchor", "end")
     .text("Star Rating");
 
-  // Top-Right Legend
   const legend = svg.append("g")
     .attr("transform", `translate(${width - 100}, ${margin.top})`);
 

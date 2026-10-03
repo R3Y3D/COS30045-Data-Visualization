@@ -1,6 +1,3 @@
-/**
- * User Interactions Module: Filters & Tooltip
- */
 const populateFilters = (data) => {
   const updateHistogram = (filterId, rawData) => {
     const updatedData = filterId === "all"
@@ -37,7 +34,6 @@ const populateFilters = (data) => {
 const createTooltip = () => {
   if (!innerChartS) return;
 
-  // Clear any existing tooltip
   innerChartS.selectAll(".tooltip").remove();
 
   const tooltip = innerChartS

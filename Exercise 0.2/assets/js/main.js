@@ -1,7 +1,4 @@
-/**
- * Appliance Energy Consumption Website
- * Interactive Logic, Animation Handlers, Accordions, and Validation.
- */
+// Appliance Energy Consumption Website: Interactive Logic, Animation Handlers, Accordions, and Validation
 
 document.addEventListener("DOMContentLoaded", () => {
   initDynamicYear();
@@ -11,9 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initEnergyCalculator();
 });
 
-/* ==========================================================================
-   1. Dynamic Footer Year
-   ========================================================================== */
+// 1. Dynamic Footer Year
 function initDynamicYear() {
   const yearSpan = document.getElementById("currentYear");
   if (yearSpan) {
@@ -21,9 +16,7 @@ function initDynamicYear() {
   }
 }
 
-/* ==========================================================================
-   2. Mobile Menu Toggle
-   ========================================================================== */
+// 2. Mobile Menu Toggle
 function initMobileNav() {
   const menuToggle = document.getElementById("menuToggle");
   const navMenu = document.getElementById("navMenu");
@@ -35,9 +28,7 @@ function initMobileNav() {
   }
 }
 
-/* ==========================================================================
-   3. Scroll Reveal Animation Trigger
-   ========================================================================== */
+// 3. Scroll Reveal Animation Trigger
 function initScrollAnimations() {
   const sections = document.querySelectorAll(".section, .card, .calculator-section");
   
@@ -56,9 +47,7 @@ function initScrollAnimations() {
   sections.forEach((sec) => observer.observe(sec));
 }
 
-/* ==========================================================================
-   4. Smooth Accordion Behavior
-   ========================================================================== */
+// 4. Smooth Accordion Behavior
 function initFaqAccordion() {
   const accordionHeaders = document.querySelectorAll(".accordion-header");
 
@@ -82,9 +71,7 @@ function initFaqAccordion() {
   });
 }
 
-/* ==========================================================================
-   5. Calculator Logic & Dynamic Form Animation
-   ========================================================================== */
+// 5. Calculator Logic & Dynamic Form Animation
 function initEnergyCalculator() {
   const form = document.getElementById("energyCalcForm");
   const applianceSelect = document.getElementById("applianceSelect");

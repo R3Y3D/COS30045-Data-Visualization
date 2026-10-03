@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. CSS Custom Variables & Root Reset
-   ========================================================================== */
 :root {
   --primary: #f39c24;
   --primary-hover: #6b5b3b;
@@ -15,7 +12,7 @@
   --danger: #ef4444;
   --success-bg: #dcfce7;
   --success-text: #15803d;
-  
+
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --radius: 10px;
   --shadow: 0 4px 6px -1px rgba(107, 91, 59, 0.08), 0 2px 4px -1px rgba(107, 91, 59, 0.04);
@@ -53,9 +50,6 @@ main {
   margin: 0 auto;
 }
 
-/* ==========================================================================
-   2. Scroll Reveal Animations
-   ========================================================================== */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -67,9 +61,6 @@ main {
   transform: translateY(0);
 }
 
-/* ==========================================================================
-   3. Header & Navigation Animations
-   ========================================================================== */
 .navbar {
   background-color: var(--card-bg);
   border-bottom: 2px solid var(--border-color);
@@ -146,9 +137,6 @@ nav ul {
   transform: scale(1.1);
 }
 
-/* ==========================================================================
-   4. Hero Keyframe Animation
-   ========================================================================== */
 .hero {
   background: linear-gradient(135deg, #f39c24 0%, #6b5b3b 100%);
   color: #ffffff;
@@ -186,7 +174,6 @@ nav ul {
   opacity: 0.95;
 }
 
-/* Subpage Banner for televisions.html & about.html */
 .subpage-header {
   background: linear-gradient(135deg, #f39c24 0%, #6b5b3b 100%);
   color: #ffffff;
@@ -204,9 +191,6 @@ nav ul {
   opacity: 0.95;
 }
 
-/* ==========================================================================
-   5. Buttons & Hover Micro-interactions
-   ========================================================================== */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -257,9 +241,6 @@ nav ul {
   transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   6. Cards & Grid Layouts
-   ========================================================================== */
 .section {
   padding: 45px 0;
   border-bottom: 1px solid var(--border-color);
@@ -327,9 +308,6 @@ nav ul {
   color: var(--primary-hover);
 }
 
-/* ==========================================================================
-   7. Form Inputs & Error Shake Animation
-   ========================================================================== */
 .calculator-section {
   background-color: var(--card-bg);
   padding: 35px;
@@ -380,7 +358,6 @@ nav ul {
   box-shadow: 0 0 0 3px rgba(243, 156, 36, 0.25);
 }
 
-/* Input Shake Animation on Form Error */
 .form-group input.invalid-input {
   border-color: var(--danger);
   background-color: #fef2f2;
@@ -407,7 +384,6 @@ nav ul {
   margin-top: 10px;
 }
 
-/* Results Panel Animation */
 .results-panel {
   margin-top: 30px;
   padding: 26px;
@@ -484,9 +460,6 @@ nav ul {
   color: var(--text-dark);
 }
 
-/* ==========================================================================
-   8. Accordion CSS Grid Slide-Down Animation
-   ========================================================================== */
 .accordion {
   display: flex;
   flex-direction: column;
@@ -537,7 +510,6 @@ nav ul {
   transform: rotate(45deg);
 }
 
-/* Smooth Accordion Body Slide using CSS Grid */
 .accordion-content {
   display: grid;
   grid-template-rows: 0fr;
@@ -555,9 +527,6 @@ nav ul {
   color: var(--text-dark);
 }
 
-/* ==========================================================================
-   9. Footer & Responsive Drawer
-   ========================================================================== */
 .footer {
   background-color: #3b3123;
   color: #d1c5b0;
@@ -605,9 +574,6 @@ nav ul {
   }
 }
 
-/* ==========================================================================
-   Table & Badge Styling
-   ========================================================================== */
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -652,7 +618,6 @@ nav ul {
   background-color: #fffdf5;
 }
 
-/* Status Badges */
 .badge {
   display: inline-block;
   padding: 5px 10px;
@@ -681,14 +646,11 @@ nav ul {
   border: 1px solid #fecaca;
 }
 
-/* ==========================================================================
-   Responsive SVG Container for D3 Canvas
-   ========================================================================== */
 .responsive-svg-container {
   display: inline-block;
   position: relative;
   width: 100%;
-  padding-bottom: 55%; /* Keeps chart aspect ratio */
+  padding-bottom: 55%;
   vertical-align: top;
   overflow: hidden;
 }
@@ -702,9 +664,6 @@ nav ul {
   height: 100%;
 }
 
-/* ==========================================================================
-   Filter Buttons Styling (Exercise 6.2)
-   ========================================================================== */
 #filters_screen {
   margin: 10px 0 15px 0;
   display: flex;
@@ -719,7 +678,7 @@ nav ul {
   line-height: 1;
   color: #ffffff;
   font-weight: 600;
-  background-color: #d2691e; /* Warm orange */
+  background-color: #d2691e;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -727,12 +686,12 @@ nav ul {
 }
 
 .filter:hover {
-  background-color: #ffb347; /* Lighter orange on hover */
+  background-color: #ffb347;
   transition-timing-function: ease-out;
 }
 
 .filter.active {
   cursor: default;
-  background-color: #ffcc80; /* Soft yellow/amber for active state */
+  background-color: #ffcc80;
   color: #ffffff;
 }

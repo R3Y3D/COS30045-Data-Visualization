@@ -1,7 +1,5 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +7,18 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Modern and clean font */
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background-color: #fffaf0; /* Light cream background for warmth */
-  color: #5a3e2b; /* Dark brown text for readability */
+  background-color: #fffaf0;
+  color: #5a3e2b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Header/Banner */
 header {
-  background-color: #d2691e; /* Warm orange */
-  color: #ffffff; /* White text */
+  background-color: #d2691e;
+  color: #ffffff;
   text-align: left;
   padding: 20px 0;
   padding-left: 20px;
@@ -29,18 +26,17 @@ header {
 
 header h1 {
   font-size: 2.5rem;
-  font-weight: 700; /* Bold font for emphasis */
+  font-weight: 700;
 }
 
-/* Main Content */
 main {
   flex: 1;
   padding: 20px;
 }
 
 h1, h2, h3 {
-  color: #5a3e2b; /* Dark brown headings */
-  font-weight: 500; /* Medium weight for headings */
+  color: #5a3e2b;
+  font-weight: 500;
 }
 
 main > div h1 {
@@ -49,10 +45,10 @@ main > div h1 {
 }
 
 p {
-  color: #5a3e2b; /* Dark brown text */
+  color: #5a3e2b;
   font-size: 1rem;
   line-height: 1.8;
-  font-weight: 300; /* Light weight for body text */
+  font-weight: 300;
 }
 
 .body {
@@ -70,7 +66,6 @@ p {
   font-weight: 400;
 }
 
-/* Footer */
 footer {
   padding: 20px;
   background-color: #fffaf0;

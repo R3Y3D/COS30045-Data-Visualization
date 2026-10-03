@@ -1,6 +1,3 @@
-/**
- * Exercise 5.1: Vertical Bar Chart with Scaled & Labeled Axes
- */
 
 // Step 1: Load and clean data (same procedure as Exercise 4.4)
 d3.csv("assets/data/data_5_1.csv", d => {
@@ -114,10 +111,7 @@ const drawBarChart = data => {
     .text(d => `${Math.round(d.Energy_Consumption)} kWh`);
 };
 
-/**
- * Exercise 5.2: Spot Power Prices Line Chart (1998 - 2024)
- */
-
+//Exercise 5.2: Spot Power Prices Line Chart (1998 - 2024)
 // Step 1: Load and parse the CSV data
 d3.csv("assets/data/ARE_Spot_Prices.csv", d => {
   // Grab the year value regardless of key capitalization
@@ -214,9 +208,7 @@ const drawLineChart = data => {
     .attr("fill", "green");
 };
 
-/**
- * Exercise 5.3: Screen Size Share Donut Chart (Polished Edition)
- */
+//Exercise 5.3: Screen Size Share Donut Chart (Polished Edition)
 
 // Step 1: Load and parse the dataset
 d3.csv("assets/data/data_5_3.csv", d => {

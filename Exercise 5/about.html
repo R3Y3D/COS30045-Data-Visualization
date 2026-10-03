@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Appliance Energy Consumption</title>
+  <title>About Us | Appliance Energy Consumption Australia</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -22,35 +22,48 @@
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="televisions.html" class="nav-link">Televisions</a></li>
           <li><a href="about.html" class="nav-link active">About Us</a></li>
-          
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Subpage Banner -->
-  <section class="subpage-header">
-    <div class="container">
+  <!-- Hero Section (Matches index.html structure) -->
+  <section class="hero">
+    <div class="container hero-content">
       <h1>About The Project</h1>
-      <p>Demonstrating core web development standards, responsive design, and DOM manipulation.</p>
+      <p>Educational data storytelling on Australian residential appliance power use.</p>
+      <a href="#purpose" class="btn btn-primary">Learn More</a>
     </div>
   </section>
 
   <!-- Main Content -->
   <main class="container">
 
-    <section class="section">
-      <div class="about-grid">
-        <div>
-          <h2>Project Overview</h2>
-          <p>The <strong>Appliance Energy Consumption Website</strong> was developed as an educational web design project demonstrating core front-end engineering fundamentals: semantic HTML structure, responsive CSS layout, and client-side JavaScript execution.</p>
-          <p>The site focuses on the Australian energy market context, educating consumers on electricity tariff structures, energy efficiency labels, and power consumption calculations.</p>
-        </div>
+    <section id="purpose" class="section">
+      <h2>Project Purpose & Academic Context</h2>
+      <p class="section-intro">The <strong>Appliance Energy Consumption Website</strong> was developed as an educational web development and data visualization project for Swinburne University of Technology. Its goal is to make household energy data accessible and directly actionable for everyday Australian consumers.</p>
     </section>
 
+    <!-- Generative AI Acknowledgement Statement -->
+    <section class="section">
+      <h2>Generative AI Disclosure & Declaration</h2>
+      <div class="card" style="border-left: 4px solid var(--primary, #0056b3);">
+        <p>In accordance with university assessment guidelines, this project received assistance from Generative AI (Gemini). AI was utilized as a coding partner for:</p>
+        <ul style="margin: 12px 0 12px 24px;">
+          <li>Code structure refinement and responsive layout adjustments.</li>
+          <li>JavaScript debugging and logic fixes.</li>
+        </ul>
+        <p>All generated outputs were reviewed, customized, integrated, and deployed by <strong>Ibrahim Mahbub</strong>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <p>&copy; <span id="currentYear"></span> Appliance Energy Consumption Website | Designed by <strong>Ibrahim Mahbub</strong></p>
+      <p class="ai-ack"><em>Acknowledgement: Generative AI assistance was utilized for code structure and JavaScript fixes.</em></p>
     </div>
   </footer>
 

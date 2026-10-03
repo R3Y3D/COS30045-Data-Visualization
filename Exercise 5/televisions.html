@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Televisions | Appliance Energy Consumption Australia</title>
+  <title>Televisions Data Story | Appliance Energy Consumption Australia</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
 
@@ -27,19 +28,20 @@
     </div>
   </header>
 
-  <!-- Subpage Banner with Aussie Flag -->
-  <section class="subpage-header">
-    <div class="container">
+  <!-- Hero Section (Matches index.html structure) -->
+  <section class="hero">
+    <div class="container hero-content">
       <h1>🇦🇺 Television Energy Consumption & Australian Standards</h1>
       <p>Comparing display panels, GEMS star ratings, and energy testing standards in Australia.</p>
+      <a href="#standards" class="btn btn-primary">Explore Australian Standards</a>
     </div>
   </section>
 
   <!-- Main Content -->
   <main class="container">
 
-    <!-- Australian Certification & Standards Card Grid -->
-    <section class="section">
+    <!-- Australian Standards Card Grid -->
+    <section id="standards" class="section">
       <h2>Australian Regulatory Certifications & Standards</h2>
       <p class="section-intro">Every television sold in Australia must comply with mandatory safety, electromagnetic, and energy efficiency standards before entering the market:</p>
 
@@ -146,9 +148,10 @@
   <footer class="footer">
     <div class="container footer-content">
       <p>&copy; <span id="currentYear"></span> Appliance Energy Consumption Website | Designed by <strong>Ibrahim Mahbub</strong></p>
+      <p class="ai-ack"><em>Acknowledgement: Generative AI assistance was utilized for code structure and JavaScript fix.</em></p>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
-</html> 
+</html>

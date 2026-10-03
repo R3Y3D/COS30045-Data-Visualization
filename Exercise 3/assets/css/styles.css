@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. Brand Variables & Core CSS Reset
-   ========================================================================== */
+/* 1. Brand Variables & Core CSS Reset */
 :root {
   /* Exact Logo Palette: Lightning Bolt Gold, Deep Earth Brown, Glow Yellow */
   --primary: #f39c24;
@@ -54,9 +52,7 @@ main {
   margin: 0 auto;
 }
 
-/* ==========================================================================
-   2. Safe Scroll Animation Rules (Content Stays Visible By Default)
-   ========================================================================== */
+/* 2. Safe Scroll Animation Rules (Content Stays Visible By Default) */
 .reveal {
   opacity: 1;
   transform: translateY(0);
@@ -73,9 +69,7 @@ body.js-loaded .reveal.active {
   transform: translateY(0);
 }
 
-/* ==========================================================================
-   3. Header & Navigation (Strict Logo Height Constraints)
-   ========================================================================== */
+/* 3. Header & Navigation (Strict Logo Height Constraints) */
 .navbar {
   background-color: var(--card-bg);
   border-bottom: 2px solid var(--border-color);
@@ -148,9 +142,7 @@ nav ul {
   color: var(--text-dark);
 }
 
-/* ==========================================================================
-   4. Hero & Subpage Banners
-   ========================================================================== */
+/* 4. Hero & Subpage Banners */
 .hero {
   background: linear-gradient(135deg, #f39c24 0%, #6b5b3b 100%);
   color: #ffffff;
@@ -190,9 +182,7 @@ nav ul {
   margin-bottom: 8px;
 }
 
-/* ==========================================================================
-   5. Buttons & Global Cards
-   ========================================================================== */
+/* 5. Buttons & Global Cards */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -299,9 +289,7 @@ nav ul {
   color: var(--primary-hover);
 }
 
-/* ==========================================================================
-   6. Calculator & Dynamic Results Panel
-   ========================================================================== */
+/* 6. Calculator & Dynamic Results Panel */
 .calculator-section {
   background-color: var(--card-bg);
   padding: 35px;
@@ -441,9 +429,7 @@ nav ul {
   color: var(--text-dark);
 }
 
-/* ==========================================================================
-   7. Accordion (Using CSS Grid Transition)
-   ========================================================================== */
+/* 7. Accordion (Using CSS Grid Transition) */
 .accordion {
   display: flex;
   flex-direction: column;
@@ -509,9 +495,7 @@ nav ul {
   color: var(--text-dark);
 }
 
-/* ==========================================================================
-   8. Tables, Badges & Data Story Specifics
-   ========================================================================== */
+/* 8. Tables, Badges & Data Story Specifics */
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -591,9 +575,7 @@ nav ul {
   margin-bottom: 16px;
 }
 
-/* ==========================================================================
-   9. Footer & Mobile Responsive
-   ========================================================================== */
+/* 9. Footer & Mobile Responsive */
 .footer {
   background-color: #3b3123;
   color: #d1c5b0;

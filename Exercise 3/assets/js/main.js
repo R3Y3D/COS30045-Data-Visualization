@@ -1,8 +1,3 @@
-/**
- * Appliance Energy Consumption Website
- * Main UI Logic, Scroll Triggers, Accordion, and Energy Calculator.
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Mark body as JS-ready so animations only hide elements when JS is active
   document.body.classList.add("js-loaded");

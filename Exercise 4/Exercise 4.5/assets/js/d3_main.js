@@ -1,9 +1,3 @@
-/**
- * Appliance Energy Consumption Australia
- * COS30045 - Data Visualisation
- * Exercise 4.5: D3 Binding and Drawing with Data
- */
-
 // Global SVG reference
 let svg;
 
@@ -37,9 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ===================================================================
 // Step 2 & 3: Bind data, set dimensions, and space out bars along y-axis
-// ===================================================================
 const drawBarChart = data => {
   const barHeight = 20;
   const barSpacing = 5; // Lab specification gap
@@ -55,6 +47,6 @@ const drawBarChart = data => {
     .attr("width", d => d.count)
     .attr("height", barHeight)
     .attr("fill", "blue")
-    .attr("x", 0)                                      // Keeps the start of the bars at x = 0
+    .attr("x", 0)                                       // Keeps the start of the bars at x = 0
     .attr("y", (d, i) => i * (barHeight + barSpacing)); // Spaces bars out along the y-axis
 };
