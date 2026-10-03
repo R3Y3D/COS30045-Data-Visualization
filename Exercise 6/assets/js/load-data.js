@@ -1,4 +1,4 @@
-d3.csv("data/W6_TVdata.csv", d => ({
+d3.csv("assets/data/W6_TVdata.csv", d => ({
   brand: d.brand,
   model: d.model,
   screenSize: +d.screenSize,
